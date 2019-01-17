@@ -12,19 +12,27 @@
 <div class="container" id="main-content">
 <?php
 
-$servername = "172.21.0.3";
+$servername = "mysql";
 $username = "root";
 $password = "\"root\"";
 
-try {
-    $conn = new PDO("mysql:host=$servername;port=3306;dbname=mysql", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully"; 
-    }
-catch(PDOException $e)
+//try {
+//    $conn = new PDO("mysql:host=mysql;port=3306;dbname=webdb", $username, $password);
+//    // set the PDO error mode to exception
+//    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//    echo "Connected successfully";
+//    }
+//catch(PDOException $e)
+//    {
+//    echo "Connection failed: " . $e->getMessage();
+//    }
+//
+    $con = mysqli_connect("127.18.0.2","yohann","yohann","webdb");
+    
+    // Check connection
+    if (mysqli_connect_errno())
     {
-    echo "Connection failed: " . $e->getMessage();
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 ?>
 </div>
