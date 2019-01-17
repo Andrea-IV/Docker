@@ -27,7 +27,7 @@ $password = "\"root\"";
 //    echo "Connection failed: " . $e->getMessage();
 //    }
 //
-    $con = mysqli_connect("127.18.0.2","yohann","yohann","webdb");
+    $con = mysqli_connect("0.0.0.0:3306","yohann","yohann","webdb");
     
     // Check connection
     if (mysqli_connect_errno())
